@@ -1,9 +1,8 @@
 Back end for time mentor
 
-terminal ->
-(pirmam kartui)
-npm init
-npm i
+valdyti per terminal
+
+(pirmam kartui) npm init (ir) npm i
 
 start server: nodemon server.js
 stop server: ctrl+c
