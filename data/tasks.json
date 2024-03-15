@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Task 1",
+    "subject": "Math",
+    "difficulty": "easy",
+    "estimatedDuration": 30,
+    "deadline": "2024-03-30",
+    "user": "65f4269e9e8ca78b953c9fb6"
+  },
+  {
+    "title": "Task 2",
+    "subject": "Science",
+    "difficulty": "medium",
+    "estimatedDuration": 60,
+    "deadline": "2024-04-10",
+    "user": "65f4269e9e8ca78b953c9fb6"
+  },
+  {
+    "title": "Task 3",
+    "subject": "English",
+    "difficulty": "hard",
+    "estimatedDuration": 90,
+    "deadline": "2024-04-20",
+    "user": "65f4269e9e8ca78b953c9fb6"
+  },
+  {
+    "title": "Task 4",
+    "subject": "History",
+    "difficulty": "easy",
+    "estimatedDuration": 30,
+    "deadline": "2024-04-30",
+    "user": "65f36d3a882380f3e485a88e"
+  },
+  {
+    "title": "Task 5",
+    "subject": "Math",
+    "difficulty": "medium",
+    "estimatedDuration": 60,
+    "deadline": "2024-05-10",
+    "user": "65f36d3a882380f3e485a88e"
+  },
+  {
+    "title": "Task 6",
+    "subject": "Science",
+    "difficulty": "hard",
+    "estimatedDuration": 90,
+    "deadline": "2024-05-20",
+    "user": "65f36d3a882380f3e485a88e"
+  },
+  {
+    "title": "Task 7",
+    "subject": "English",
+    "difficulty": "easy",
+    "estimatedDuration": 30,
+    "deadline": "2024-05-30",
+    "user": "65f4302c794cff6ed5513f0e"
+  },
+  {
+    "title": "Task 8",
+    "subject": "History",
+    "difficulty": "medium",
+    "estimatedDuration": 60,
+    "deadline": "2024-06-10",
+    "user": "65f4302c794cff6ed5513f0e"
+  },
+  {
+    "title": "Task 9",
+    "subject": "Math",
+    "difficulty": "hard",
+    "estimatedDuration": 90,
+    "deadline": "2024-06-20",
+    "user": "65f4302c794cff6ed5513f0e"
+  },
+  {
+    "title": "Task 10",
+    "subject": "Science",
+    "difficulty": "easy",
+    "estimatedDuration": 30,
+    "deadline": "2024-06-30",
+    "user": "65f430e262e35e044d38542d"
+  }
+]

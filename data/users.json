@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "65f4269e9e8ca78b953c9fb6",
+    "name": "John Doe",
+    "email": "a@tm.com",
+    "password": "password"
+  },
+  {
+    "_id": "65f36d3a882380f3e485a88e",
+    "name": "Jane Doe",
+    "email": "b@tm.com",
+    "password": "password"
+  },
+  {
+    "_id": "65f4302c794cff6ed5513f0e",
+    "name": "John Smith",
+    "email": "c@tm.com",
+    "password": "password"
+  },
+  {
+    "_id": "65f430e262e35e044d38542d",
+    "name": "John Smith",
+    "email": "d@tm.com",
+    "password": "password"
+  },
+  {
+    "_id": "65f4311523791e15547e7a94",
+    "name": "Bob Smith",
+    "email": "e@tm.com",
+    "password": "password"
+  }
+]
