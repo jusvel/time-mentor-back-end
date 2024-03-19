@@ -11,7 +11,7 @@ const app = express();
 app.use(
   cors({
     origin: "http://localhost:8000",
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Allow credentials (cookies)
   })
