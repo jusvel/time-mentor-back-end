@@ -71,3 +71,7 @@ exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
   }
   next();
 });
+
+exports.filterTasksByDifficulty = (tasks, difficulty) => {
+  return tasks.filter((task) => task.difficulty === difficulty);
+};
