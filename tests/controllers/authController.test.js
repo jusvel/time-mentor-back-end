@@ -20,4 +20,21 @@ describe("Auth Controller", () => {
       expect(response.body.data.user.email).toBe(email);
     });
   });
+  
+  describe("POST /login", () => {
+    it("should log in a user and return a token", async () => {
+      const response = await request("127.0.0.1:3000")
+        .post("/api/v1/users/login")
+        .send({
+          email: email,
+          password: "password123",
+        });
+      console.log(response);
+
+      expect(response.statusCode).toBe(200);
+      expect(response.body).toHaveProperty("token");
+      expect(response.body).toHaveProperty("data.user");
+      expect(response.body.data.user.email).toBe(email);
+    });
+  });
 });
