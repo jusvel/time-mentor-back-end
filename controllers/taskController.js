@@ -74,8 +74,8 @@ exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
   next();
 });
 
-exports.searchTasks = catchAsync(async (req, res, next) => {
-  const title = req.query.title;
+exports.getTasksByQuery = catchAsync(async (req, res, next) => {
+  const { title } = req.query;
   let query = {};
 
   if (title) {
@@ -84,7 +84,9 @@ exports.searchTasks = catchAsync(async (req, res, next) => {
 
   const tasks = await Task.find({ ...query, user: req.user.id });
 
-  if (tasks.length === 0) return next(new AppError("No tasks found", 404));
+  if (!tasks.length) {
+    return next(new AppError("No tasks found", 404));
+  }
 
   res.status(200).json({
     status: "success",
