@@ -75,14 +75,19 @@ exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
 });
 
 exports.getTasksByQuery = catchAsync(async (req, res, next) => {
-  const { title } = req.query;
-  let query = {};
+  const { query } = req.query;
+  let searchQuery = {};
 
-  if (title) {
-    query = { title: { $regex: title, $options: "i" } };
+  if (query) {
+    searchQuery = {
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { subject: { $regex: query, $options: "i" } },
+      ],
+    };
   }
 
-  const tasks = await Task.find({ ...query, user: req.user.id });
+  const tasks = await Task.find({ ...searchQuery, user: req.user.id });
 
   if (!tasks.length) {
     return next(new AppError("No tasks found", 404));
