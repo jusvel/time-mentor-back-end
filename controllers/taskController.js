@@ -84,6 +84,8 @@ exports.searchTasks = catchAsync(async (req, res, next) => {
 
   const tasks = await Task.find({ ...query, user: req.user.id });
 
+  if (tasks.length === 0) return next(new AppError("No tasks found", 404));
+
   res.status(200).json({
     status: "success",
     results: tasks.length,
