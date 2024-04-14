@@ -75,7 +75,7 @@ exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
 });
 
 exports.getTasksByQuery = catchAsync(async (req, res, next) => {
-  const { query } = req.query;
+  const { query, difficulty } = req.query;
   let searchQuery = {};
 
   if (query) {
@@ -85,6 +85,10 @@ exports.getTasksByQuery = catchAsync(async (req, res, next) => {
         { subject: { $regex: query, $options: "i" } },
       ],
     };
+  }
+
+  if (difficulty) {
+    searchQuery.difficulty = difficulty;
   }
 
   const tasks = await Task.find({ ...searchQuery, user: req.user.id });
@@ -100,6 +104,4 @@ exports.getTasksByQuery = catchAsync(async (req, res, next) => {
       tasks,
     },
   });
-
-  next();
 });
