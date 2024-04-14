@@ -23,6 +23,7 @@ exports.getMyTasks = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyTask = catchAsync(async (req, res, next) => {
+  if (req.params.id === "search") return next();
   const task = await Task.findById(req.params.id);
 
   res.status(200).json({
@@ -58,6 +59,7 @@ exports.deleteMyTask = catchAsync(async (req, res, next) => {
 exports.createTask = factory.createOne(Task);
 
 exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
+  if (req.params.id === "search") return next();
   const task = await Task.findById(req.params.id);
 
   if (!task) {
@@ -69,5 +71,35 @@ exports.checkTaskOwnership = catchAsync(async (req, res, next) => {
       new AppError("You are not authorized to access this task", 403)
     );
   }
+  next();
+});
+
+exports.getTasksByQuery = catchAsync(async (req, res, next) => {
+  const { query } = req.query;
+  let searchQuery = {};
+
+  if (query) {
+    searchQuery = {
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { subject: { $regex: query, $options: "i" } },
+      ],
+    };
+  }
+
+  const tasks = await Task.find({ ...searchQuery, user: req.user.id });
+
+  if (!tasks.length) {
+    return next(new AppError("No tasks found", 404));
+  }
+
+  res.status(200).json({
+    status: "success",
+    results: tasks.length,
+    data: {
+      tasks,
+    },
+  });
+
   next();
 });
