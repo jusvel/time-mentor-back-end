@@ -12,6 +12,8 @@ router
   .get(taskController.getMyTasks)
   .post(taskController.createTask);
 
+router.route("/search").get(taskController.getTasksByQuery);
+
 router
   .route("/:id")
   .get(taskController.checkTaskOwnership, taskController.getMyTask)

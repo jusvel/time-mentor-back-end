@@ -29,6 +29,9 @@ const taskSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
+    result: {
+      type: Number,
+    },
     user: {
       type: mongoose.Schema.ObjectId,
       ref: "User",
