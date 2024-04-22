@@ -10,10 +10,7 @@ const app = express();
 //Allow cors for front end app
 app.use(
   cors({
-    origin: [
-      "http://localhost:8000",
-      "https://time-mentor-front-end.onrender.com",
-    ],
+    origin: ["http://localhost:8000", "https://timementor.netlify.app"],
     methods: ["GET", "POST", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true, // Allow credentials (cookies)
